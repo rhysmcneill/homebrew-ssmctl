@@ -28,9 +28,16 @@ class Ssmctl < Formula
     os   = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "amd64"
     bin.install "ssmctl-#{os}-#{arch}" => "ssmctl"
+
+    # Shell completions — generated at install time so users get tab completion
+    # automatically without any extra setup steps.
+    generate_completions_from_executable(bin/"ssmctl", "completion")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ssmctl version")
+    assert_match "ssmctl", shell_output("#{bin}/ssmctl completion bash")
+    assert_match "ssmctl", shell_output("#{bin}/ssmctl completion zsh")
+    assert_match "ssmctl", shell_output("#{bin}/ssmctl completion fish")
   end
 end
