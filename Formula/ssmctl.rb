@@ -28,7 +28,7 @@ class Ssmctl < Formula
     os   = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "amd64"
     bin.install "ssmctl-#{os}-#{arch}" => "ssmctl"
-    chmod 0755, bin/"ssmctl"
+    (bin/"ssmctl").chmod(0755)
 
     # Shell completions — generated at install time so users get tab completion
     # automatically without any extra setup steps.
