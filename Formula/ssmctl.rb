@@ -1,26 +1,26 @@
 class Ssmctl < Formula
   desc "Lightweight CLI for AWS SSM connections, remote command execution, and file transfers"
   homepage "https://github.com/rhysmcneill/ssmctl"
-  version "2.3.0"
+  version "2.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/rhysmcneill/ssmctl/releases/download/v#{version}/ssmctl-darwin-arm64"
-      sha256 "4a3c879d31f99a1826b82a40987062e193a35a16f4400cbf4afa8bc7b51d6ab9" # darwin-arm64
+      sha256 "62d1615f1705be3dda04e963c4c3389173dfcdaa105175c0f3f844909d832625" # darwin-arm64
     else
       url "https://github.com/rhysmcneill/ssmctl/releases/download/v#{version}/ssmctl-darwin-amd64"
-      sha256 "c63d4eb25716ab4685cdc87fe8ed046f603a57b17f6133aadb70d6a6b3f542ab" # darwin-amd64
+      sha256 "6e562dbcb889abe7994d01ff6ebe677ff076a151cbc9d1ba73155a5b433e6d59" # darwin-amd64
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/rhysmcneill/ssmctl/releases/download/v#{version}/ssmctl-linux-arm64"
-      sha256 "0ea7047b08fe977bc2d24c009326dd0cf6c06e99b6126848a9293418c3a973d8" # linux-arm64
+      sha256 "3805c6150363f69196e3ca5094464f6b89e52533bcdafd22d473c7e86e72ef32" # linux-arm64
     else
       url "https://github.com/rhysmcneill/ssmctl/releases/download/v#{version}/ssmctl-linux-amd64"
-      sha256 "f4b29044df2d5db70a1e56af4d88294128b08cb0a3b295022f6dd161d99818e1" # linux-amd64
+      sha256 "1da98269c61d26b62c7b4c73ce17a107b5a0d9d188378569ae89e55a749e260d" # linux-amd64
     end
   end
 
